@@ -1,6 +1,6 @@
 # swagger_client.GeographiesApi
 
-All URIs are relative to *https://kernel.telluslabs.com/api/v0.2*
+All URIs are relative to *https://api.kernel.telluslabs.com/api/v0.2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Available geographies
 
 The Geographies endpoint returns information about the available geographies for a given country, geography level, metric, & date combination.
 
-### Example 
+### Example
 ```python
 from __future__ import print_statement
 import time
@@ -32,7 +32,7 @@ start_date = '2013-10-20' # date | First date for which metrics are returned
 end_date = '2013-10-20' # date | Last date included in the timeseries (optional)
 crop = 'crop_example' # str | Filter response by crop (optional)
 
-try: 
+try:
     # Available geographies
     api_response = api_instance.geographies_get(country_iso, geo_level, metric_code, start_date, end_date=end_date, crop=crop)
     pprint(api_response)
@@ -44,12 +44,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country_iso** | **str**| 3-letter country code | 
- **geo_level** | **str**| Geographic level of granularity | 
- **metric_code** | [**list[str]**](str.md)| Comma-delimited list of metric codes | 
- **start_date** | **date**| First date for which metrics are returned | 
- **end_date** | **date**| Last date included in the timeseries | [optional] 
- **crop** | **str**| Filter response by crop | [optional] 
+ **country_iso** | **str**| 3-letter country code |
+ **geo_level** | **str**| Geographic level of granularity |
+ **metric_code** | [**list[str]**](str.md)| Comma-delimited list of metric codes |
+ **start_date** | **date**| First date for which metrics are returned |
+ **end_date** | **date**| Last date included in the timeseries | [optional]
+ **crop** | **str**| Filter response by crop | [optional]
 
 ### Return type
 
@@ -73,7 +73,7 @@ Available geography levels
 
 The Geography Levels endpoint returns information about the available geography levels for a given country, metric, & date combination.
 
-### Example 
+### Example
 ```python
 from __future__ import print_statement
 import time
@@ -89,7 +89,7 @@ start_date = '2013-10-20' # date | First date for which metrics are returned
 end_date = '2013-10-20' # date | Last date included in the timeseries (optional)
 crop = 'crop_example' # str | Filter response by crop (optional)
 
-try: 
+try:
     # Available geography levels
     api_response = api_instance.geographies_levels_get(country_iso, metric_code, start_date, end_date=end_date, crop=crop)
     pprint(api_response)
@@ -101,11 +101,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **country_iso** | **str**| 3-letter country code | 
- **metric_code** | [**list[str]**](str.md)| Comma-delimited list of metric codes | 
- **start_date** | **date**| First date for which metrics are returned | 
- **end_date** | **date**| Last date included in the timeseries | [optional] 
- **crop** | **str**| Filter response by crop | [optional] 
+ **country_iso** | **str**| 3-letter country code |
+ **metric_code** | [**list[str]**](str.md)| Comma-delimited list of metric codes |
+ **start_date** | **date**| First date for which metrics are returned |
+ **end_date** | **date**| Last date included in the timeseries | [optional]
+ **crop** | **str**| Filter response by crop | [optional]
 
 ### Return type
 
@@ -121,4 +121,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
