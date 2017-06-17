@@ -6,6 +6,7 @@ This library is for accessing Kernel insights programmatically in a Python progr
 Python 2.7 and 3.4+
 
 ## Installation & Usage
+
 ### pip install
 
 If the python package is hosted on Github, you can install directly from Github
@@ -13,11 +14,17 @@ If the python package is hosted on Github, you can install directly from Github
 ```sh
 pip install git+https://github.com/telluslabs/kernel-api-python.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
+
+You may need to run `pip` with root permission:
+
+```sh
+sudo pip install git+https://github.com/telluslabs/kernel-api-python.git
+```
 
 Then import the package:
+
 ```python
-import swagger_client 
+import swagger_client
 ```
 
 ### Setuptools
@@ -27,9 +34,11 @@ Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
 ```sh
 python setup.py install --user
 ```
+
 (or `sudo python setup.py install` to install the package for all users)
 
 Then import the package:
+
 ```python
 import swagger_client
 ```
@@ -59,7 +68,6 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GeographiesApi->geographies_get: %s\n" % e)
-
 ```
 
 ## Documentation for API Endpoints
@@ -100,6 +108,3 @@ Class | Method | HTTP request | Description
 
 
 ## Author
-
-
-
