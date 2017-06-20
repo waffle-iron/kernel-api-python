@@ -72,7 +72,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://kernel.telluslabs.com/api/v0.2*
+All URIs are relative to *https://api.kernel.telluslabs.com/api/v0.2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
