@@ -1,4 +1,7 @@
+[![Build Status](https://travis-ci.com/telluslabs/kernel-api-python.svg?token=Bk5QBrkXPRFtpFxJNByT&branch=master)](https://travis-ci.com/telluslabs/kernel-api-python)
+
 # Python Client for the Kernel API (version 0.2)
+
 This library is for accessing Kernel insights programmatically in a Python program.
 
 ## Requirements.
