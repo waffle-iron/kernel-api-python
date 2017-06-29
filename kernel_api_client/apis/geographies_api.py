@@ -127,23 +127,22 @@ class GeographiesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/geographies'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'country_iso' in params:
-            query_params['country_iso'] = params['country_iso']
+            query_params.append(('country_iso', params['country_iso']))
         if 'geo_level' in params:
-            query_params['geo_level'] = params['geo_level']
+            query_params.append(('geo_level', params['geo_level']))
         if 'metric_code' in params:
-            query_params['metric_code'] = params['metric_code']
+            query_params.append(('metric_code', params['metric_code']))
             collection_formats['metric_code'] = 'csv'
         if 'start_date' in params:
-            query_params['start_date'] = params['start_date']
+            query_params.append(('start_date', params['start_date']))
         if 'end_date' in params:
-            query_params['end_date'] = params['end_date']
+            query_params.append(('end_date', params['end_date']))
         if 'crop' in params:
-            query_params['crop'] = params['crop']
+            query_params.append(('crop', params['crop']))
 
         header_params = {}
 
@@ -156,9 +155,9 @@ class GeographiesApi(object):
             select_header_accept(['application/json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['api_key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/geographies', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
@@ -255,21 +254,20 @@ class GeographiesApi(object):
 
         collection_formats = {}
 
-        resource_path = '/geographies/levels'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
+        query_params = []
         if 'country_iso' in params:
-            query_params['country_iso'] = params['country_iso']
+            query_params.append(('country_iso', params['country_iso']))
         if 'metric_code' in params:
-            query_params['metric_code'] = params['metric_code']
+            query_params.append(('metric_code', params['metric_code']))
             collection_formats['metric_code'] = 'csv'
         if 'start_date' in params:
-            query_params['start_date'] = params['start_date']
+            query_params.append(('start_date', params['start_date']))
         if 'end_date' in params:
-            query_params['end_date'] = params['end_date']
+            query_params.append(('end_date', params['end_date']))
         if 'crop' in params:
-            query_params['crop'] = params['crop']
+            query_params.append(('crop', params['crop']))
 
         header_params = {}
 
@@ -282,9 +280,9 @@ class GeographiesApi(object):
             select_header_accept(['application/json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['api_key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/geographies/levels', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,

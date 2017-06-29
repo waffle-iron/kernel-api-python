@@ -14,23 +14,23 @@
 from __future__ import absolute_import
 
 # import models into sdk package
+from .models.auth_token import AuthToken
 from .models.column_description import ColumnDescription
-from .models.crop import Crop
-from .models.date_range import DateRange
-from .models.error import Error
+from .models.forecast_metadata import ForecastMetadata
+from .models.general_error import GeneralError
 from .models.geography import Geography
 from .models.geography_level import GeographyLevel
 from .models.metric import Metric
-from .models.profile import Profile
+from .models.subscribed_crop import SubscribedCrop
 from .models.table import Table
 from .models.table_row import TableRow
-from .models.timeseries import Timeseries
-from .models.timeseries_value import TimeseriesValue
-from .models.user_alert_preferences import UserAlertPreferences
+from .models.user_profile import UserProfile
+from .models.extended_user_profile import ExtendedUserProfile
 
 # import apis into sdk package
 from .apis.geographies_api import GeographiesApi
 from .apis.metrics_api import MetricsApi
+from .apis.token_api import TokenApi
 from .apis.user_api import UserApi
 
 # import ApiClient

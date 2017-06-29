@@ -14,16 +14,15 @@
 from __future__ import absolute_import
 
 # import models into model package
+from .auth_token import AuthToken
 from .column_description import ColumnDescription
-from .crop import Crop
-from .date_range import DateRange
-from .error import Error
+from .forecast_metadata import ForecastMetadata
+from .general_error import GeneralError
 from .geography import Geography
 from .geography_level import GeographyLevel
 from .metric import Metric
-from .profile import Profile
+from .subscribed_crop import SubscribedCrop
 from .table import Table
 from .table_row import TableRow
-from .timeseries import Timeseries
-from .timeseries_value import TimeseriesValue
-from .user_alert_preferences import UserAlertPreferences
+from .user_profile import UserProfile
+from .extended_user_profile import ExtendedUserProfile

@@ -40,163 +40,51 @@ class UserApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def user_alerts_put(self, api_key, user_alert_preferences, **kwargs):
+    def user_get(self, **kwargs):
         """
-        Update alert preferences
-        The alerts endpoint allows the web app to update user alert preference information.
+        Retrieve User profile information
+        The User endpoint returns profile information such as name, subscription level, and alert preferences for the authorized user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.user_alerts_put(api_key, user_alert_preferences, callback=callback_function)
+        >>> thread = api.user_get(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str api_key: Authorize request via API key (required)
-        :param UserAlertPreferences user_alert_preferences: The alert preferences you want to update (required)
-        :return: UserAlertPreferences
+        :return: UserProfile
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.user_alerts_put_with_http_info(api_key, user_alert_preferences, **kwargs)
+            return self.user_get_with_http_info(**kwargs)
         else:
-            (data) = self.user_alerts_put_with_http_info(api_key, user_alert_preferences, **kwargs)
+            (data) = self.user_get_with_http_info(**kwargs)
             return data
 
-    def user_alerts_put_with_http_info(self, api_key, user_alert_preferences, **kwargs):
+    def user_get_with_http_info(self, **kwargs):
         """
-        Update alert preferences
-        The alerts endpoint allows the web app to update user alert preference information.
+        Retrieve User profile information
+        The User endpoint returns profile information such as name, subscription level, and alert preferences for the authorized user.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.user_alerts_put_with_http_info(api_key, user_alert_preferences, callback=callback_function)
+        >>> thread = api.user_get_with_http_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str api_key: Authorize request via API key (required)
-        :param UserAlertPreferences user_alert_preferences: The alert preferences you want to update (required)
-        :return: UserAlertPreferences
+        :return: UserProfile
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['api_key', 'user_alert_preferences']
-        all_params.append('callback')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method user_alerts_put" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'api_key' is set
-        if ('api_key' not in params) or (params['api_key'] is None):
-            raise ValueError("Missing the required parameter `api_key` when calling `user_alerts_put`")
-        # verify the required parameter 'user_alert_preferences' is set
-        if ('user_alert_preferences' not in params) or (params['user_alert_preferences'] is None):
-            raise ValueError("Missing the required parameter `user_alert_preferences` when calling `user_alerts_put`")
-
-
-        collection_formats = {}
-
-        resource_path = '/user/alerts'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'api_key' in params:
-            query_params['api_key'] = params['api_key']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'user_alert_preferences' in params:
-            body_params = params['user_alert_preferences']
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-
-        # Authentication setting
-        auth_settings = []
-
-        return self.api_client.call_api(resource_path, 'PUT',
-                                        path_params,
-                                        query_params,
-                                        header_params,
-                                        body=body_params,
-                                        post_params=form_params,
-                                        files=local_var_files,
-                                        response_type='UserAlertPreferences',
-                                        auth_settings=auth_settings,
-                                        callback=params.get('callback'),
-                                        _return_http_data_only=params.get('_return_http_data_only'),
-                                        _preload_content=params.get('_preload_content', True),
-                                        _request_timeout=params.get('_request_timeout'),
-                                        collection_formats=collection_formats)
-
-    def user_get(self, api_key, **kwargs):
-        """
-        User Profile
-        The User Profile endpoint returns information about the user that has authorized with the application.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.user_get(api_key, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str api_key: Authorize request via API key (required)
-        :return: Profile
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
-            return self.user_get_with_http_info(api_key, **kwargs)
-        else:
-            (data) = self.user_get_with_http_info(api_key, **kwargs)
-            return data
-
-    def user_get_with_http_info(self, api_key, **kwargs):
-        """
-        User Profile
-        The User Profile endpoint returns information about the user that has authorized with the application.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.user_get_with_http_info(api_key, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str api_key: Authorize request via API key (required)
-        :return: Profile
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['api_key']
+        all_params = []
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -211,19 +99,12 @@ class UserApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'api_key' is set
-        if ('api_key' not in params) or (params['api_key'] is None):
-            raise ValueError("Missing the required parameter `api_key` when calling `user_get`")
-
 
         collection_formats = {}
 
-        resource_path = '/user'.replace('{format}', 'json')
         path_params = {}
 
-        query_params = {}
-        if 'api_key' in params:
-            query_params['api_key'] = params['api_key']
+        query_params = []
 
         header_params = {}
 
@@ -236,16 +117,118 @@ class UserApi(object):
             select_header_accept(['application/json'])
 
         # Authentication setting
-        auth_settings = []
+        auth_settings = ['api_key']
 
-        return self.api_client.call_api(resource_path, 'GET',
+        return self.api_client.call_api('/user', 'GET',
                                         path_params,
                                         query_params,
                                         header_params,
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='Profile',
+                                        response_type='UserProfile',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
+    def user_put(self, user_profile, **kwargs):
+        """
+        Update user profile information
+        Update user profile information and alert preferences
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.user_put(user_profile, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ExtendedUserProfile user_profile: The alert preferences you want to update (required)
+        :return: UserProfile
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.user_put_with_http_info(user_profile, **kwargs)
+        else:
+            (data) = self.user_put_with_http_info(user_profile, **kwargs)
+            return data
+
+    def user_put_with_http_info(self, user_profile, **kwargs):
+        """
+        Update user profile information
+        Update user profile information and alert preferences
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.user_put_with_http_info(user_profile, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ExtendedUserProfile user_profile: The alert preferences you want to update (required)
+        :return: UserProfile
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_profile']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method user_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'user_profile' is set
+        if ('user_profile' not in params) or (params['user_profile'] is None):
+            raise ValueError("Missing the required parameter `user_profile` when calling `user_put`")
+
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'user_profile' in params:
+            body_params = params['user_profile']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['api_key']
+
+        return self.api_client.call_api('/user', 'PUT',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='UserProfile',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

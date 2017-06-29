@@ -1,12 +1,10 @@
-# Geography
+# SubscribedCrop
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**country_iso** | **str** |  | [optional] 
-**geo_display_name** | **str** |  | [optional] 
-**geo_id** | **str** |  | [optional] 
-**geo_level** | **str** |  | [optional] 
+**country_iso** | **str** | Crop country ISO | [optional] 
+**name** | **str** | Crop name | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
