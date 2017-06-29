@@ -17,16 +17,16 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.geographies_api import GeographiesApi
+import kernel_api_client
+from kernel_api_client.rest import ApiException
+from kernel_api_client.apis.geographies_api import GeographiesApi
 
 
 class TestGeographiesApi(unittest.TestCase):
     """ GeographiesApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.geographies_api.GeographiesApi()
+        self.api = kernel_api_client.apis.geographies_api.GeographiesApi()
 
     def tearDown(self):
         pass

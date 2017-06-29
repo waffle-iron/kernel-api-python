@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.column_description import ColumnDescription
+import kernel_api_client
+from kernel_api_client.rest import ApiException
+from kernel_api_client.models.column_description import ColumnDescription
 
 
 class TestColumnDescription(unittest.TestCase):
@@ -35,7 +35,9 @@ class TestColumnDescription(unittest.TestCase):
         """
         Test ColumnDescription
         """
-        model = swagger_client.models.column_description.ColumnDescription()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = kernel_api_client.models.column_description.ColumnDescription()
+        pass
 
 
 if __name__ == '__main__':

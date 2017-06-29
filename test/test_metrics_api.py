@@ -17,18 +17,26 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.metrics_api import MetricsApi
+import kernel_api_client
+from kernel_api_client.rest import ApiException
+from kernel_api_client.apis.metrics_api import MetricsApi
 
 
 class TestMetricsApi(unittest.TestCase):
     """ MetricsApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.metrics_api.MetricsApi()
+        self.api = kernel_api_client.apis.metrics_api.MetricsApi()
 
     def tearDown(self):
+        pass
+
+    def test_forecasts_metadata_get(self):
+        """
+        Test case for forecasts_metadata_get
+
+        Forecast model metadata
+        """
         pass
 
     def test_metrics_metadata_get(self):
@@ -44,14 +52,6 @@ class TestMetricsApi(unittest.TestCase):
         Test case for metrics_table_get
 
         Get values for a metric (or group of metrics) for a specific geography, crop, and date (or date range).
-        """
-        pass
-
-    def test_metrics_timeseries_metric_code_get(self):
-        """
-        Test case for metrics_timeseries_metric_code_get
-
-        Get values for a metric for a specific geography and a specified time period.
         """
         pass
 

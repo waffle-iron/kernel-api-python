@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.table import Table
+import kernel_api_client
+from kernel_api_client.rest import ApiException
+from kernel_api_client.models.table import Table
 
 
 class TestTable(unittest.TestCase):
@@ -35,7 +35,9 @@ class TestTable(unittest.TestCase):
         """
         Test Table
         """
-        model = swagger_client.models.table.Table()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = kernel_api_client.models.table.Table()
+        pass
 
 
 if __name__ == '__main__':
