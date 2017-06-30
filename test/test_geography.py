@@ -17,9 +17,9 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.models.geography import Geography
+import kernel_api_client
+from kernel_api_client.rest import ApiException
+from kernel_api_client.models.geography import Geography
 
 
 class TestGeography(unittest.TestCase):
@@ -35,7 +35,9 @@ class TestGeography(unittest.TestCase):
         """
         Test Geography
         """
-        model = swagger_client.models.geography.Geography()
+        # FIXME: construct object with mandatory attributes with example values
+        #model = kernel_api_client.models.geography.Geography()
+        pass
 
 
 if __name__ == '__main__':

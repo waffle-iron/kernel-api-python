@@ -19,24 +19,24 @@ import unittest
 
 import kernel_api_client
 from kernel_api_client.rest import ApiException
-from kernel_api_client.models.metric import Metric
+from kernel_api_client.apis.token_api import TokenApi
 
 
-class TestMetric(unittest.TestCase):
-    """ Metric unit test stubs """
+class TestTokenApi(unittest.TestCase):
+    """ TokenApi unit test stubs """
 
     def setUp(self):
-        pass
+        self.api = kernel_api_client.apis.token_api.TokenApi()
 
     def tearDown(self):
         pass
 
-    def testMetric(self):
+    def test_token_post(self):
         """
-        Test Metric
+        Test case for token_post
+
+        Auth Token
         """
-        # FIXME: construct object with mandatory attributes with example values
-        #model = kernel_api_client.models.metric.Metric()
         pass
 
 

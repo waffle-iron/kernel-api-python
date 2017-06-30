@@ -19,11 +19,11 @@ import unittest
 
 import kernel_api_client
 from kernel_api_client.rest import ApiException
-from kernel_api_client.models.metric import Metric
+from kernel_api_client.models.user_profile import UserProfile
 
 
-class TestMetric(unittest.TestCase):
-    """ Metric unit test stubs """
+class TestUserProfile(unittest.TestCase):
+    """ UserProfile unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestMetric(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testMetric(self):
+    def testUserProfile(self):
         """
-        Test Metric
+        Test UserProfile
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = kernel_api_client.models.metric.Metric()
+        #model = kernel_api_client.models.user_profile.UserProfile()
         pass
 
 

@@ -17,33 +17,33 @@ import os
 import sys
 import unittest
 
-import swagger_client
-from swagger_client.rest import ApiException
-from swagger_client.apis.user_api import UserApi
+import kernel_api_client
+from kernel_api_client.rest import ApiException
+from kernel_api_client.apis.user_api import UserApi
 
 
 class TestUserApi(unittest.TestCase):
     """ UserApi unit test stubs """
 
     def setUp(self):
-        self.api = swagger_client.apis.user_api.UserApi()
+        self.api = kernel_api_client.apis.user_api.UserApi()
 
     def tearDown(self):
-        pass
-
-    def test_user_alerts_put(self):
-        """
-        Test case for user_alerts_put
-
-        Update alert preferences
-        """
         pass
 
     def test_user_get(self):
         """
         Test case for user_get
 
-        User Profile
+        Retrieve User profile information
+        """
+        pass
+
+    def test_user_put(self):
+        """
+        Test case for user_put
+
+        Update user profile information
         """
         pass
 
